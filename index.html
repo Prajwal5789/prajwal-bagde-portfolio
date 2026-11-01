@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prajwal Bagde | Computer Science Engineering Student</title>
+<meta name="description" content="Portfolio of Prajwal Bagde, B.Tech Computer Science student in Nagpur. Web development, cyber security and Python projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0c1124; --night2:#151c38; --paper:#f4f6fb; --card:#fff; --ink:#111a33; --muted:#586683;
+  --line:#dbe1ee; --accent:#5865ff; --accent2:#8e98ff; --on-night:#c9d2ec;
+  --head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+.top{background:var(--night);color:#fff;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 95%);mask-image:linear-gradient(to bottom,#000 30%,transparent 95%)}
+.nav{position:sticky;top:0;z-index:20;background:rgba(12,17,36,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-family:var(--head);font-weight:800;font-size:1.2rem;text-decoration:none;color:#fff}
+.nav ul{display:flex;gap:26px;list-style:none}
+.nav ul a{text-decoration:none;color:var(--on-night);font-size:.97rem;font-weight:500}
+.nav ul a:hover{color:#fff}
+
+.hero{position:relative;padding:72px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.5fr .7fr;gap:48px;align-items:center}
+.hero h1{font-family:var(--head);font-weight:800;font-size:clamp(3.4rem,11.5vw,8.2rem);line-height:.88;letter-spacing:-.045em}
+.hero h1 span{display:block}
+.type{margin-top:28px;font-family:var(--head);font-weight:500;font-size:clamp(1.15rem,3vw,1.6rem);color:var(--accent2);min-height:1.5em}
+.type::after{content:"";display:inline-block;width:3px;height:1.1em;background:var(--accent2);margin-left:4px;vertical-align:-4px;animation:blink 1s steps(2) infinite}
+.lead{margin-top:16px;max-width:50ch;color:var(--on-night)}
+.actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid currentColor}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.solid:hover{background:#4553f0;border-color:#4553f0}
+.hero .btn.line{color:#fff;border-color:rgba(255,255,255,.4)}
+.hero .btn.line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+.avatar{position:relative;width:100%;max-width:280px;aspect-ratio:4/5;margin-left:auto;border-radius:22px;background:linear-gradient(160deg,var(--night2),#232d58);border:1px solid rgba(255,255,255,.14);overflow:hidden;display:grid;place-items:center}
+.avatar b{font-family:var(--head);font-weight:800;font-size:5rem;color:rgba(255,255,255,.22);letter-spacing:-.04em}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+section{padding:76px 0}
+h2{font-family:var(--head);font-weight:800;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.03em;line-height:1.05;margin-bottom:30px}
+h3{font-family:var(--head);font-weight:700;font-size:1.3rem;line-height:1.25}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.about p{color:var(--muted)}
+.about p+p{margin-top:14px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;align-self:start}
+.facts div{background:var(--card);padding:18px 20px}
+.facts dt{font-size:.85rem;color:var(--muted)}
+.facts dd{font-weight:600;margin-top:2px}
+
+.projects{display:grid;gap:26px}
+.project{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr}
+.project .info{padding:34px}
+.project p{margin-top:12px;color:var(--muted)}
+.project ul{margin:14px 0 0 18px;color:var(--muted)}
+.project li+li{margin-top:5px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tags span{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:3px 12px;font-size:.88rem;font-weight:500}
+.go{display:inline-block;margin-top:22px;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:2px solid currentColor}
+.go:hover{color:#3c48d6}
+.visual{background:var(--night);color:var(--on-night);padding:30px;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:.84rem;line-height:1.9;display:flex;flex-direction:column;justify-content:center;overflow-x:auto}
+.visual .ok{color:#8bd8ff}.visual .warn{color:#ffcf8a}.visual .dim{color:#7f8db3}
+.visual small{display:block;margin-top:14px;font-family:var(--body);font-size:.78rem;color:#7f8db3}
+.visual.web{background:linear-gradient(160deg,#1b2450,#2c3a86)}
+.mock{background:#fff;border-radius:10px;padding:12px;display:grid;gap:8px}
+.mock i{display:block;height:8px;border-radius:4px;background:#dfe4f3}
+.mock i:first-child{width:45%;height:12px;background:var(--accent)}
+.mock i:nth-child(3){width:80%}.mock i:nth-child(4){width:60%}
+
+.band{background:var(--night);color:#fff}
+.band h2{color:#fff}
+.groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 28px}
+.groups h3{font-size:1.05rem;color:var(--accent2);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px 15px;font-size:.95rem;color:var(--on-night)}
+
+.edu{display:grid;gap:0}
+.row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row time{color:var(--muted);font-weight:500}
+.row p{color:var(--muted)}
+.certs{margin-top:44px}
+.certs ul{margin-top:14px;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.certs li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 18px;font-weight:500}
+
+.contact{background:linear-gradient(160deg,var(--accent),#3a46d6);color:#fff;text-align:center}
+.contact h2{margin-bottom:14px}
+.contact p{max-width:46ch;margin:0 auto;color:#e4e8ff}
+.contact .actions{justify-content:center}
+.contact .btn.solid{background:#fff;color:var(--ink);border-color:#fff}
+.contact .btn.solid:hover{background:var(--night);color:#fff;border-color:var(--night)}
+.contact .btn.line{color:#fff;border-color:rgba(255,255,255,.55)}
+.contact .btn.line:hover{background:rgba(255,255,255,.14);border-color:#fff}
+footer{background:var(--night);color:var(--on-night);text-align:center;padding:22px 0;font-size:.9rem}
+
+
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}
+.o1{width:420px;height:420px;background:#4a58ff;top:-120px;right:-80px}
+.o2{width:320px;height:320px;background:#7a3cff;bottom:-140px;left:-60px;opacity:.35}
+.hero .wrap{position:relative;z-index:1}
+.avatar{background:var(--night2);border:0;padding:0;box-shadow:0 0 0 2px rgba(142,152,255,.55),0 30px 70px -20px rgba(88,101,255,.6)}
+.avatar img{object-position:50% 20%}
+.badge{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(12,17,36,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:9px 14px;font-size:.88rem;color:#fff;display:flex;align-items:center;gap:9px}
+.badge i{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 26px}
+.filters button{font:inherit;font-weight:600;cursor:pointer;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:8px 20px;border-radius:999px}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.projects{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project.wide{grid-column:1/-1}
+.project:not(.wide){grid-template-columns:1fr;grid-template-rows:auto 1fr}
+.project:not(.wide) .visual{order:-1;min-height:150px}
+.project.hide{display:none}
+.status{display:inline-block;font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:12px}
+.status.done{background:#dcfce7;color:#14532d}
+.status.next{background:#e8eaff;color:#2b36b8}
+.kind{font-size:.88rem;color:var(--muted);margin-bottom:4px}
+.bars{display:flex;align-items:flex-end;gap:10px;height:90px}
+.bars i{flex:1;background:linear-gradient(to top,#5865ff,#9aa4ff);border-radius:6px 6px 0 0}
+.mock .row2{display:flex;justify-content:space-between}
+.mock .row2 i{width:30%}
+.scan span.o{color:#8bd8ff}.scan span.c{color:#7f8db3}
+.project .info p.note{font-size:.9rem}
+
+
+.hero h1{background:linear-gradient(100deg,#fff 30%,#aab4ff 68%,#7fe0ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.top::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,72%) var(--my,28%),rgba(120,135,255,.24),transparent 60%)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#5865ff,#7fe0ff);z-index:50}
+.ticker{background:var(--card);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0}
+.ticker div{display:flex;gap:44px;width:max-content;animation:slide 36s linear infinite}
+.ticker:hover div{animation-play-state:paused}
+.ticker span{font-family:var(--head);font-weight:700;font-size:1.2rem;color:var(--muted);white-space:nowrap}
+.ticker span::after{content:"\2726";color:var(--accent);margin-left:44px}
+h2::after{content:"";display:block;width:60px;height:5px;border-radius:3px;background:linear-gradient(90deg,var(--accent),#7fe0ff);margin-top:14px}
+.contact h2::after{margin-left:auto;margin-right:auto;background:#fff}
+.project{transition:transform .25s,box-shadow .25s,border-color .25s}
+.project:hover{transform:translateY(-6px);box-shadow:0 28px 54px -26px rgba(88,101,255,.6);border-color:var(--accent2)}
+.facts div{transition:background .2s}.facts div:hover{background:#eef0ff}
+.band{background:radial-gradient(760px 320px at 88% 0%,rgba(88,101,255,.38),transparent 70%),radial-gradient(520px 260px at 0% 100%,rgba(122,60,255,.28),transparent 70%),var(--night)}
+.groups>div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px;transition:border-color .25s,transform .25s}
+.groups>div:hover{border-color:var(--accent2);transform:translateY(-4px)}
+.groups .full{grid-column:1/-1}
+.chips span{transition:background .2s,border-color .2s,color .2s}
+.chips span:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.row{transition:padding-left .25s}.row:hover{padding-left:14px}
+.contact{background:radial-gradient(500px 300px at 15% 0%,rgba(255,255,255,.22),transparent 70%),linear-gradient(160deg,var(--accent),#3a46d6 60%,#6a38e8)}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker div{animation:none}.project,.groups>div,.row{transition:none}}
+
+@keyframes blink{50%{opacity:0}}
+@media (max-width:860px){
+  .hero{padding:48px 0 72px}
+  .hero .wrap,.about,.project{grid-template-columns:1fr}
+  .avatar{margin:0;max-width:200px;aspect-ratio:1}
+  .groups{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:4px}
+  section{padding:56px 0}
+}
+@media (max-width:560px){.nav ul{gap:14px}.nav ul li:nth-child(n+4){display:none}.facts{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.type::after{animation:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<div class="top">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#home">Prajwal Bagde</a>
+      <nav aria-label="Main"><ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <div class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <h1><span>Prajwal</span><span>Bagde</span></h1>
+        <p class="type" id="type" aria-label="Computer Science Engineering student"></p>
+        <p class="lead">I build web apps and Python tools, and I'm growing into cyber security and data analysis. I'm looking for an internship or entry-level role where I can build things and keep learning.</p>
+        <div class="actions">
+          <a class="btn solid" href="Prajwal_Resume.pdf" download="Prajwal_Resume.pdf">Download resume</a>
+          <a class="btn line" href="#projects">View projects</a>
+          <a class="btn line" href="#contact">Contact me</a>
+        </div>
+      </div>
+      
+      <div class="avatar"><b>PB</b><img src="c:\Users\prajw\Downloads\profile.jpg" alt="Portrait of Prajwal Bagde" onerror="this.remove()"><div class="badge"><i></i>Open to internships</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker" aria-hidden="true"><div><span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span><span>Cyber Security</span><span>Power BI</span><span>Tableau</span><span>Git</span><span>Linux</span><span>IoT</span><span>AI</span><span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span><span>Cyber Security</span><span>Power BI</span><span>Tableau</span><span>Git</span><span>Linux</span><span>IoT</span><span>AI</span></div></div>
+
+<main>
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <div class="about">
+        <div>
+          <p>I'm a Computer Science Engineering student in Nagpur, graduating in 2027. I like problems where I can build something that works, then make it better.</p>
+          <p>I'm now focusing on web development and cyber security, with AI and IoT fundamentals on the side.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Degree</dt><dd>B.Tech, Computer Science Engineering</dd></div>
+          <div><dt>Graduating</dt><dd>2027</dd></div>
+          <div><dt>Based in</dt><dd>Nagpur, Maharashtra</dd></div>
+          <div><dt>Languages</dt><dd>English, Hindi, Marathi</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="padding-top:0">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="web" aria-pressed="false">Web development</button>
+        <button type="button" data-f="cyber" aria-pressed="false">Cyber security</button>
+      </div>
+      <div class="projects">
+        <article class="project wide" data-k="web">
+          <div class="info">
+            <span class="status done">Built</span>
+            <div class="kind">Web development</div>
+            <h3>USB Device Activity Monitor</h3>
+            <p>A web application that watches USB device activity on a computer and shows it on a dashboard.</p>
+            <ul>
+              <li>Monitoring and logging built in Python.</li>
+              <li>Flask dashboard to view device events.</li>
+            </ul>
+            <div class="tags"><span>Python</span><span>Flask</span><span>GitHub</span></div>
+            <a class="go" href="https://github.com/Prajwal5789">View on GitHub</a>
+          
+        </article>
+        <article class="project" data-k="web">
+          <div class="info">
+            <span class="status next">Building next</span>
+            <div class="kind">Web development</div>
+            <h3>Expense Tracker Dashboard</h3>
+            <p>A web app to add expenses and see spending by category and month in charts.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span></div>
+          </div>
+          
+        </article>
+        <article class="project" data-k="cyber">
+          <div class="info">
+            <span class="status next">Building next</span>
+            <div class="kind">Cyber security</div>
+            <h3>Network Port Scanner</h3>
+            <p>A Python tool that checks which ports are open on a device, built for learning and used only on my own lab network.</p>
+            <div class="tags"><span>Python</span><span>Sockets</span><span>Networking</span></div>
+          </div>
+        </article>
+        <article class="project" data-k="cyber">
+          <div class="info">
+            <span class="status next">Building next</span>
+            <div class="kind">Cyber security</div>
+            <h3>Phishing URL Detector</h3>
+            <p>A tool that checks a web link for common phishing signs and gives it a risk score.</p>
+            <div class="tags"><span>Python</span><span>Machine learning</span><span>Security</span></div>
+          </div>
+          
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="band">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="groups">
+        <div><h3>Programming</h3><div class="chips"><span>C</span><span>Python (basic)</span></div></div>
+        <div><h3>Web development</h3><div class="chips"><span>HTML</span><span>CSS</span><span>Basic web design</span><span>Responsive design</span><span>Flask</span></div></div>
+        <div><h3>Cyber security</h3><div class="chips"><span>USB activity monitoring</span><span>Networking (learning)</span><span>Port scanning (learning)</span><span>Phishing detection (learning)</span></div></div>
+        <div><h3>Data analysis</h3><div class="chips"><span>Power BI</span><span>Tableau</span><span>MS Excel</span><span>Data visualization</span></div></div>
+        <div><h3>Tools and systems</h3><div class="chips"><span>Git</span><span>GitHub</span><span>Basic Linux</span></div></div>
+        <div><h3>AI and IoT</h3><div class="chips"><span>AI fundamentals</span><span>IoT knowledge</span></div></div>
+        <div class="full"><h3>Working style</h3><div class="chips"><span>Communication</span><span>Teamwork</span><span>Adaptability</span><span>Quick learning</span><span>Analytical thinking</span><span>Time management</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="row"><time>2023 to 2027</time><div><h3>SB Jain Institute of Management and Technology, Nagpur</h3><p>B.Tech, Computer Science Engineering. CGPA 6.52</p></div></div>
+        <div class="row"><time>Higher Secondary</time><div><h3>Nirala College, Nagpur</h3><p>12th, Maharashtra State Board</p></div></div>
+        <div class="row"><time>Secondary</time><div><h3>Podar International School, Nagpur</h3><p>10th, CBSE Board</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p>I'm open to internships and entry-level roles in web development and data analysis. Email is the quickest way to reach me.</p>
+      <div class="actions">
+        <a class="btn solid" href="mailto:prajwalbagde5789@gmail.com">Email me</a>
+        <a class="btn line" href="https://www.linkedin.com/in/prajwal-bagde">LinkedIn</a>
+        <a class="btn line" href="https://github.com/Prajwal5789">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Prajwal Bagde</div></footer>
+
+<script>
+(function(){
+  var el=document.getElementById('type'),t='Computer Science Engineering student';
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=t;return;}
+  var i=0;(function n(){el.textContent=t.slice(0,i++);if(i<=t.length)setTimeout(n,45);})();
+})();
+</script>
+<script>
+document.querySelectorAll('.filters button').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    document.querySelectorAll('.filters button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    document.querySelectorAll('.project').forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.dataset.k!==f)});
+  });
+});
+</script>
+<script>
+(function(){
+  var bar=document.getElementById('progress'),top=document.querySelector('.top');
+  addEventListener('scroll',function(){
+    var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  },{passive:true});
+  top.addEventListener('pointermove',function(e){
+    var r=top.getBoundingClientRect();
+    top.style.setProperty('--mx',(e.clientX-r.left)+'px');top.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+})();
+</script>
+</body>
+</html>
